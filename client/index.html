@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>RPS</title>
+		<link rel="stylesheet" href="styles/main.css">
+		<script type="text/javascript">
+			/*	
+				ctx.textAlign = "right";
+				
+				for(var i = 0; i < player.inventory.spaces; i++)
+				{
+					ctx.fillStyle = "#ddccaa";
+					ctx.fillRect(10 + (i * 50), 350,
+						40, 40);
+					
+					if(typeof player.inventory.stacks[i]!='undefined')
+					{
+						var it = globals.itemTypes[player.inventory.stacks[i].type];
+						
+						it.sprite.draw(gameTime,
+							10 + (i * 50) + it.offset[0],
+							350 + it.offset[1]);
+						
+						if(player.inventory.stacks[i].qty>1)
+						{
+							ctx.fillStyle = "#000000";
+							ctx.fillText("" + player.inventory.stacks[i].qty,
+								10 + (i*50) + 38,
+								350 + 38);
+						}
+					}
+				}
+				ctx.textAlign = "left";
+
+				ctx.fillStyle = "#ff0000";
+				ctx.fillText("FPS: " + framesLastSecond, 10, 20);
+				ctx.fillText("Game speed: " + globals.gameSpeeds[currentSpeed].name, 10, 40);
+
+				lastFrameTime = currentFrameTime;
+				requestAnimationFrame(drawGame);
+			}
+			*/
+		</script>
+	</head>
+	<body>
+		<canvas id="game" width="400" height="400"></canvas>
+
+		<div class="rps-wrapper">
+			<ul id="events"></ul>
+			<div class="controls">
+				<div class="chat-wrapper">
+					<form id="chat-form">
+						<input id="chat" autocomplete="off" title="chat"/>
+						<button id="say">Say</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="src/client.js"></script>
+	</body>
+</html>
